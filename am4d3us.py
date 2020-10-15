@@ -65,6 +65,20 @@ async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='no reas
     slapped = ", ".join(x.name for x in members)
     await ctx.send('{} just got slapped for {}'.format(slapped, reason))
 
+
+@bot.command(kiss)
+async def kiss(ctx, members: commands.Greedy[discord.Member], *,):
+    kissed = ", ".join(x.name for x in members)
+    embed = discord.Embed()
+    embed.set_image(url=random.choice(kisss))
+    await ctx.send(embed = embed, '{} just got kissed {}'.format(kissed,))
+
+kisss = [
+'https://images-ext-1.discordapp.net/external/X2fuJ0nMNrLcpejQB-BJMQfmudkd3hwyWQS-BS7xR1s/https/i.imgur.com/0ZY8Pe0.gif',
+'https://i.pinimg.com/originals/32/d4/f0/32d4f0642ebb373e3eb072b2b91e6064.gif ',
+'https://media1.giphy.com/media/l4FsKa1n9fyStiwZW/giphy.gif', 'https://media.giphy.com/media/gDAaru13sdEK4/giphy.gif'
+]       
+
 @bot.command(aliases=['8ball', 'test'])
 async def _8ball(ctx, *, question):
    responses = ['Most likely.',
