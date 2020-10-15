@@ -66,7 +66,7 @@ async def slap(ctx, members: commands.Greedy[discord.Member], *, reason='no reas
     await ctx.send('{} just got slapped for {}'.format(slapped, reason))
 
 
-@bot.command(kiss)
+@bot.command()
 async def kiss(ctx, members: commands.Greedy[discord.Member], *,):
     kissed = ", ".join(x.name for x in members)
     embed = discord.Embed()
